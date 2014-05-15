@@ -1,0 +1,21 @@
+{
+  "name": "sentiment",
+  "version": "0.0.1",
+  "description": "Performs sentiment analysis on the provided input \"term/s\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sentiment",
+    "analysis"
+  ],
+  "author": "Itai Koren (@itkoren)",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10.x"
+  },
+  "dependencies": {
+      "require.async":"0.1.x"
+  }
+}
