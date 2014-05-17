@@ -85,11 +85,6 @@ var server = http.createServer(function(req, res) {
                     parse(results[i], results, items, complete);
                 }
             }
-        }).on("error", function(e) {
-            // Deal with errors
-            console.log("Got error: " + e.message);
-            res.writeHead(500);
-            res.end("** Only Bear Here :) **");
         });
 
         // Querying the google API for the supplied term
@@ -145,11 +140,6 @@ var server = http.createServer(function(req, res) {
                     parse(results[i], results, items, complete);
                 }
             }
-        }).on("error", function(e) {
-            // Deal with errors
-            console.log("Got error: " + e.message);
-            res.writeHead(500);
-            res.end("** Only Bear Here :) **");
         });
     } else {
         // No search term supplied, just return
