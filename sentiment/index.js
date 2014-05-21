@@ -56,6 +56,6 @@ module.exports = function (term, callback) {
         }
 
         // Start calculating
-        calculate(i);
+        calculate(words[i]);
 	});
 };
