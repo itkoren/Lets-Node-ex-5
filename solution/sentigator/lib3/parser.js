@@ -1,22 +1,40 @@
 // Include The 'sentiment' Module
 var sentiment = require("sentiment");
 
+// Constructor
+function Parser() {
+    // Initialize all instance properties
+    this.items = [];
+}
+
+// Prototype Methods
 /**
  * Performs sentiment parsing on the provided input array of search results.
  *
  * @param {Number} Input item to be parsed
- * @param {Array} Input items with the parsed results
  *
  * @return {void}
  */
 // Etheration function for parsing the score of each item returned from the API
 // Using the sentiment module API
-var parse = module.exports = function(item, items) {
+Parser.prototype.parse = function(item) {
     // Build the returned items array
-    items.push(item);
+    this.items.push(item);
 
     // Parse score using the sentiment API
     sentiment(item.text, function (err, score) {
         item.score = score;
     });
 };
+
+/**
+ * Get the already parsed items.
+ *
+ * @return {Array}
+ */
+Parser.prototype.getItems = function() {
+    return this.items;
+};
+
+// Export the object
+module.exports = Parser;
