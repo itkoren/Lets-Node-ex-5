@@ -1,6 +1,39 @@
 // Include The 'sentiment' Module
 var sentiment = require("sentiment");
 
+// Constructor
+function Parser() {
+    // Initialize all instance properties
+    this.items = [];
+}
+
+// Prototype Methods
+/**
+ * Performs sentiment parsing on the provided input array of search results.
+ *
+ * @param {Number} Input index of the current result to be parsed
+ * @param {Array} Input search results
+ * @param {Function} Input parse result method for parsing a single result
+ * @param {Boolean} Input flag which represents whether the results contain items from UTube
+ * @param {Function} Callback to invoke when parsing completes
+ *
+ * @return {void}
+ */
+// Etheration function for parsing the score of each item returned from the API
+// Using the sentiment module API
+Parser.prototype.parse = function(index, results, parseResult, hasUTube, callback) {
+    parse(index, results, this.items, parseResult, hasUTube, callback)
+};
+
+/**
+ * Get the already parsed items.
+ *
+ * @return {Array}
+ */
+Parser.prototype.getItems = function() {
+    return this.items;
+};
+
 /**
  * Performs sentiment parsing on the provided input array of search results.
  *
@@ -15,7 +48,7 @@ var sentiment = require("sentiment");
  */
 // Etheration function for parsing the score of each item returned from the API
 // Using the sentiment module API
-var parse = module.exports = function(index, results, items, parseResult, hasUTube, callback) {
+function parse(index, results, items, parseResult, hasUTube, callback) {
     var result = results[index];
 
     // Use the supplied parsing method for parsing the current result
@@ -45,3 +78,6 @@ var parse = module.exports = function(index, results, items, parseResult, hasUTu
         });
     });
 };
+
+// Export the object
+module.exports = Parser;

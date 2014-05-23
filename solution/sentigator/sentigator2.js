@@ -11,7 +11,7 @@ var request = require("request");
 var async = require("async");
 
 // Include The 'parser' Module
-var parser = require("./lib2/parser");
+var Parser = require("./lib2/parser");
 
 // Create the HTTP Server
 var server = http.createServer(function(req, res) {
@@ -32,11 +32,11 @@ var server = http.createServer(function(req, res) {
             parseTweets: ["twitxy", function (callback, data) {
                 // Storage objects
                 var results = (data.twitxy && JSON.parse(data.twitxy[1]) || { statuses: [] });
-                var items = [];
+                var parser = new Parser();
 
                 results = results && results.statuses;
 
-                parser(0, results, items, function(result) {
+                parser.parse(0, results, function(result) {
                     return {
                         src: "Twitter",
                         text: result.text,
@@ -46,11 +46,11 @@ var server = http.createServer(function(req, res) {
             }],
             parseGoogle: ["google", function (callback, data) {
                 var results = (data.google && JSON.parse(data.google[1]) || { responseData: { results: [] } });
-                var items = [];
+                var parser = new Parser();
 
                 results = results && results.responseData && results.responseData.results;
 
-                parser(0, results, items, function(result) {
+                parser.parse(0, results, function(result) {
                     return {
                         src: "Google",
                         text: result.title,
@@ -67,12 +67,12 @@ var server = http.createServer(function(req, res) {
             }],
             parseUtube: ["utube", function (callback, data) {
                 // Storage objects
-                var items = [];
                 var results = (data.utube && JSON.parse(data.utube[1]) || { feed: { entry: [] } });
+                var parser = new Parser();
 
                 results = results && results.feed && results.feed.entry;
 
-                parser(0, results, items, function(result) {
+                parser.parse(0, results, function(result) {
                     return {
                         src: "UTube",
                         text: result.title.$t,
