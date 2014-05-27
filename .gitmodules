@@ -1,6 +1,6 @@
 [submodule "examples/streams-pipe"]
 	path = examples/streams-pipe
-	url = git@github.com:itkoren/Lets-Node-exp-streams-pipe.git
+	url = https://github.com/itkoren/Lets-Node-exp-streams-pipe.git
 [submodule "examples/callback-hell"]
 	path = examples/callback-hell
-	url = git@github.com:itkoren/Lets-Node-exp-callback-hell.git
+	url = https://github.com/itkoren/Lets-Node-exp-callback-hell.git
