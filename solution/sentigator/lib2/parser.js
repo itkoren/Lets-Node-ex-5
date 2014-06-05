@@ -19,7 +19,7 @@ function Parser() {
  *
  * @return {void}
  */
-// Etheration function for parsing the score of each item returned from the API
+// Eteration function for parsing the score of each item returned from the API
 // Using the sentiment module API
 Parser.prototype.parse = function(index, results, parseResult, hasUTube, callback) {
     parse(index, results, this.items, parseResult, hasUTube, callback)
@@ -46,7 +46,7 @@ Parser.prototype.getItems = function() {
  *
  * @return {void}
  */
-// Etheration function for parsing the score of each item returned from the API
+// Eteration function for parsing the score of each item returned from the API
 // Using the sentiment module API
 function parse(index, results, items, parseResult, hasUTube, callback) {
     var result = results[index];
@@ -66,9 +66,9 @@ function parse(index, results, items, parseResult, hasUTube, callback) {
     sentiment(item.text, function (err, score) {
         item.score = score;
 
-        // Defer next turn execution (Etheration)
+        // Defer next turn execution (Eteration)
         setImmediate(function () {
-            // Check if etheration should continue
+            // Check if eteration should continue
             if (index < (results.length - 1)) {;
                 parse(++index, results, items, parseResult, hasUTube, callback);
             }

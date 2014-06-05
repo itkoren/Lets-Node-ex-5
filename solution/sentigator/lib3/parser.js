@@ -15,7 +15,7 @@ function Parser() {
  *
  * @return {void}
  */
-// Etheration function for parsing the score of each item returned from the API
+// Eteration function for parsing the score of each item returned from the API
 // Using the sentiment module API
 Parser.prototype.parse = function(item) {
     // Build the returned items array

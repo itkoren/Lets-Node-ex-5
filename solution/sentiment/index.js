@@ -42,7 +42,7 @@ module.exports = function (term, callback) {
                 score += rate;
             }
 
-            // Defer next turn execution (Etheration)
+            // Defer next turn execution (Eteration)
             setImmediate(function() {
                 // Use callback for completion
                 if (i === (words.length - 1)) {
