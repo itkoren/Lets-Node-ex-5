@@ -39,7 +39,7 @@ var server = http.createServer(function(req, res) {
             var items = [];
             var i = 0;
 
-            // Etheration function for parsing the score of each tweet returned from the twitxy API
+            // Eteration function for parsing the score of each tweet returned from the twitxy API
             // Using the sentiment module API
             function parse(result, results, items, callback) {
                 var item = {
@@ -55,9 +55,9 @@ var server = http.createServer(function(req, res) {
                 sentiment(item.text, function(err, score) {
                     item.score = score;
 
-                    // Defer next turn execution (Etheration)
+                    // Defer next turn execution (Eteration)
                     setImmediate(function() {
-                        // Check if etheration should continue
+                        // Check if eteration should continue
                         if (i < (results.length - 1)) {
                             parse(results[++i], results, items, callback);
                         }
@@ -94,7 +94,7 @@ var server = http.createServer(function(req, res) {
             var items = [];
             var i = 0;
 
-            // Etheration function for parsing the score of each tweet returned from the google API
+            // Eteration function for parsing the score of each tweet returned from the google API
             // Using the sentiment module API
             function parse(result, results, items, callback) {
                 var item = {
@@ -110,9 +110,9 @@ var server = http.createServer(function(req, res) {
                 sentiment(item.text, function(err, score) {
                     item.score = score;
 
-                    // Defer next turn execution (Etheration)
+                    // Defer next turn execution (Eteration)
                     setImmediate(function() {
-                        // Check if etheration should continue
+                        // Check if eteration should continue
                         if (i < (results.length - 1)) {
                             parse(results[++i], results, items, callback);
                         }
