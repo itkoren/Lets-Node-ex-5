@@ -12,6 +12,6 @@ Please complete the following steps:
 
 3. Use streams to improve the flow. Do it by:
  * Using **"JSONStream"** module as pipe for parsing the returned JSON from the API requests
- * Using **"event-stream"** module as pipe for events of mapping the parsed JSON from **"JSONStream"** module
+ * Using **"event-stream"** module as pipe for events of mapping the parsed JSON from **"JSONStream"** module (**HINT: Good example can be found in the ["JSONStream" documentation](https://github.com/dominictarr/JSONStream "JSONStream @ GitHub")
 
 #####Use the **"sentiment"** and the **"sentigator"** modules in this repository as a starting point for the exercise
