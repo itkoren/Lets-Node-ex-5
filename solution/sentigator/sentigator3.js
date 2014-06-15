@@ -57,7 +57,7 @@ var server = http.createServer(function(req, res) {
                         });
 
                         // Check if in utube
-                        if (!hasUTube && -1 !== data.unescapedUrl.indexOf("utube.com")) {
+                        if (!hasUTube && -1 !== data.unescapedUrl.indexOf("youtube.com")) {
                             hasUTube = true;
                         }
                     })).on("end", function() {

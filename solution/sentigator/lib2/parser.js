@@ -58,7 +58,7 @@ function parse(index, results, items, parseResult, hasUTube, callback) {
     items.push(item);
 
     // Check if in utube
-    if (!hasUTube && result.unescapedUrl && -1 !== result.unescapedUrl.indexOf("utube.com")) {
+    if (!hasUTube && result.unescapedUrl && -1 !== result.unescapedUrl.indexOf("youtube.com")) {
         hasUTube = true;
     }
 

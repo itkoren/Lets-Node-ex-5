@@ -113,7 +113,7 @@ var server = http.createServer(function(req, res) {
                 items.push(item);
 
                 // Check if in utube
-                if (!hasUTube && -1 !== result.unescapedUrl.indexOf("utube.com")) {
+                if (!hasUTube && -1 !== result.unescapedUrl.indexOf("youtube.com")) {
                     hasUTube = true;
                 }
 
